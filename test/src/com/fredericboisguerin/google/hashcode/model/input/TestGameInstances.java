@@ -16,4 +16,7 @@ public interface TestGameInstances {
     ProductType LIGHT_PRODUCT_TYPE = new ProductType(ONE_KILOGRAM);
     ProductItem LIGHT_PRODUCT_ITEM = new ProductItem(LIGHT_PRODUCT_TYPE);
 
+    String BUSY_DAY = "busy_day.in";
+    String MOTHER_OF_ALL_WAREHOUSES = "mother_of_all_warehouses.in";
+    String REDUNDANCY = "redundancy.in";
 }

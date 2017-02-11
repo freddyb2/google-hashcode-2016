@@ -7,15 +7,10 @@ import java.util.List;
 
 public class FileGameParser {
 
-    private final FileToStringsParser fileToStringsParser;
-    private final StringsGameParser stringsGameParser;
+    private final FileToStringsParser fileToStringsParser = new FileToStringsParser();
+    private final StringsGameParser stringsGameParser = new StringsGameParser();
 
-    public FileGameParser(FileToStringsParser fileToStringsParser, StringsGameParser stringsGameParser) {
-        this.fileToStringsParser = fileToStringsParser;
-        this.stringsGameParser = stringsGameParser;
-    }
-
-    public Game parseFile(File file){
+    public Game parseFile(File file) {
         List<String> lines = fileToStringsParser.getStrings(file);
         return stringsGameParser.parse(lines);
     }

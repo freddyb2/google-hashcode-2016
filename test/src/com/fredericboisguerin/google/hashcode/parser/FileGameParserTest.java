@@ -8,13 +8,10 @@ import org.junit.Test;
 
 import java.io.File;
 
+import static com.fredericboisguerin.google.hashcode.model.input.TestGameInstances.*;
 import static org.hamcrest.CoreMatchers.is;
 
 public class FileGameParserTest {
-
-    private static final String BUSY_DAY = "busy_day.in";
-    private static final String MOTHER_OF_ALL_WAREHOUSES = "mother_of_all_warehouses.in";
-    private static final String REDUNDANCY = "redundancy.in";
 
     private FileGameParser fileGameParser;
 
@@ -23,7 +20,7 @@ public class FileGameParserTest {
         FileToStringsParser fileToStringsParser = new FileToStringsParser();
         StringsGameParser stringsGameParser = new StringsGameParser();
 
-        fileGameParser = new FileGameParser(fileToStringsParser, stringsGameParser);
+        fileGameParser = new FileGameParser();
     }
 
     @Test
