@@ -1,5 +1,10 @@
 package com.fredericboisguerin.google.hashcode.model;
 
+import com.fredericboisguerin.google.hashcode.model.Position;
+import com.fredericboisguerin.google.hashcode.model.ProductItem;
+import com.fredericboisguerin.google.hashcode.model.ProductType;
+import com.fredericboisguerin.google.hashcode.model.Weight;
+
 public interface TestGameInstances {
     Position ORIGIN_POSITION = new Position(0, 0);
 

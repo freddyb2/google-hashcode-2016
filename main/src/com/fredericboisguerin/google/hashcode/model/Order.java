@@ -14,15 +14,15 @@ public class Order {
     }
 
     public void add(ProductType productType, int quantity) {
-        productTypeQuantityMap.putIfAbsent(productType, 0);
-        productTypeQuantityMap.computeIfPresent(productType, (key, value) -> value + quantity);
+        assert quantity > 0;
+        productTypeQuantityMap.compute(productType, (key, value) -> value == null ? quantity : value + quantity);
     }
 
     public Set<ProductType> getProductTypes() {
         return productTypeQuantityMap.keySet();
     }
 
-    public int getQuantityFor(ProductType productType){
-        return productTypeQuantityMap.getOrDefault(productType,0);
+    public int getQuantityFor(ProductType productType) {
+        return productTypeQuantityMap.getOrDefault(productType, 0);
     }
 }

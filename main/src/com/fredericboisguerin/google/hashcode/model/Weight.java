@@ -1,6 +1,6 @@
 package com.fredericboisguerin.google.hashcode.model;
 
-class Weight {
+public class Weight {
 
     private final int value;
 

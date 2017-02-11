@@ -1,12 +1,10 @@
 package com.fredericboisguerin.google.hashcode.model;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashSet;
 
-import static com.fredericboisguerin.google.hashcode.model.TestGameInstances.ORIGIN_POSITION;
 import static org.junit.Assert.assertTrue;
 
 public class GameTest {
@@ -21,9 +19,9 @@ public class GameTest {
 
     @Before
     public void setUp() throws Exception {
-        Order anOrder = new Order(ORIGIN_POSITION);
+        Order anOrder = new Order(TestGameInstances.ORIGIN_POSITION);
         AN_ORDER_SET.add(anOrder);
-        Warehouse aWarehouse = new Warehouse(ORIGIN_POSITION);
+        Warehouse aWarehouse = new Warehouse(TestGameInstances.ORIGIN_POSITION);
         A_WAREHOUSE_SET.add(aWarehouse);
         A_DRONE_SET.add(new Drone(TEN_KILOS));
     }

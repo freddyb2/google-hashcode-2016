@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 
-class ProductItemContainer {
+public class ProductItemContainer {
     private final Set<ProductItem> productItems = new HashSet<>();
 
     public Weight getWeight() {

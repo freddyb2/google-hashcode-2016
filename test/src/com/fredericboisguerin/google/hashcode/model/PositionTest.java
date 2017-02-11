@@ -1,5 +1,6 @@
 package com.fredericboisguerin.google.hashcode.model;
 
+import com.fredericboisguerin.google.hashcode.model.Position;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
