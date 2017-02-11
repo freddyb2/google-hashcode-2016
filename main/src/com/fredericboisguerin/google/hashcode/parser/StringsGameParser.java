@@ -1,6 +1,6 @@
 package com.fredericboisguerin.google.hashcode.parser;
 
-import com.fredericboisguerin.google.hashcode.model.*;
+import com.fredericboisguerin.google.hashcode.model.input.*;
 
 import java.util.Arrays;
 import java.util.HashSet;

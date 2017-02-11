@@ -1,4 +1,4 @@
-package com.fredericboisguerin.google.hashcode.model;
+package com.fredericboisguerin.google.hashcode.model.input;
 
 import org.junit.Test;
 

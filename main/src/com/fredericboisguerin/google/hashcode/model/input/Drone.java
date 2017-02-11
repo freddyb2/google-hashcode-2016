@@ -1,4 +1,4 @@
-package com.fredericboisguerin.google.hashcode.model;
+package com.fredericboisguerin.google.hashcode.model.input;
 
 public class Drone {
     private final Weight maximumLoad;

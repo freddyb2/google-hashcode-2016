@@ -1,6 +1,6 @@
 package com.fredericboisguerin.google.hashcode.parser;
 
-import com.fredericboisguerin.google.hashcode.model.Game;
+import com.fredericboisguerin.google.hashcode.model.input.Game;
 import com.fredericboisguerin.google.hashcode.utils.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;

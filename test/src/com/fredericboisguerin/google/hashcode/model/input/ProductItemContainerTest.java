@@ -1,9 +1,9 @@
-package com.fredericboisguerin.google.hashcode.model;
+package com.fredericboisguerin.google.hashcode.model.input;
 
-import com.fredericboisguerin.google.hashcode.model.ProductItem;
-import com.fredericboisguerin.google.hashcode.model.ProductItemContainer;
-import com.fredericboisguerin.google.hashcode.model.ProductType;
-import com.fredericboisguerin.google.hashcode.model.Weight;
+import com.fredericboisguerin.google.hashcode.model.input.ProductItem;
+import com.fredericboisguerin.google.hashcode.model.input.ProductItemContainer;
+import com.fredericboisguerin.google.hashcode.model.input.ProductType;
+import com.fredericboisguerin.google.hashcode.model.input.Weight;
 import org.junit.Before;
 import org.junit.Test;
 

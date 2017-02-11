@@ -1,6 +1,6 @@
-package com.fredericboisguerin.google.hashcode.model;
+package com.fredericboisguerin.google.hashcode.model.input;
 
-import com.fredericboisguerin.google.hashcode.model.Position;
+import com.fredericboisguerin.google.hashcode.model.input.Position;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

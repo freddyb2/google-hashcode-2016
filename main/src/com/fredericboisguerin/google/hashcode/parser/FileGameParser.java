@@ -1,6 +1,6 @@
 package com.fredericboisguerin.google.hashcode.parser;
 
-import com.fredericboisguerin.google.hashcode.model.Game;
+import com.fredericboisguerin.google.hashcode.model.input.Game;
 
 import java.io.File;
 import java.util.List;
