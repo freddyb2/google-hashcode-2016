@@ -7,5 +7,5 @@ public interface Algo {
 
     String getName();
 
-    Solution getSolution(Game game);
+    Solution findSolution(Game game);
 }

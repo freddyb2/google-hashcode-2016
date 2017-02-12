@@ -1,5 +1,7 @@
 package com.fredericboisguerin.google.hashcode.model.input;
 
+import com.fredericboisguerin.google.hashcode.StringUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -21,17 +23,7 @@ public class ProductList {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ProductList that = (ProductList) o;
-
-        return productTypeQuantityMap != null ? productTypeQuantityMap.equals(that.productTypeQuantityMap) : that.productTypeQuantityMap == null;
-    }
-
-    @Override
-    public int hashCode() {
-        return productTypeQuantityMap != null ? productTypeQuantityMap.hashCode() : 0;
+    public String toString() {
+        return StringUtils.getTable(productTypeQuantityMap, "ProductId", "Quantity");
     }
 }

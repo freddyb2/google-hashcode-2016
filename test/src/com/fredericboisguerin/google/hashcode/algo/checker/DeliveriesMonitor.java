@@ -10,6 +10,7 @@ import java.util.Map;
 
 class DeliveriesMonitor {
 
+    public static final ProductList EMPTY_PRODUCT_LIST = new ProductList();
     private final Map<Order, ProductList> orderProductListMap = new HashMap<>();
     private final InnerVisitor visitor = new InnerVisitor();
 
@@ -18,7 +19,7 @@ class DeliveriesMonitor {
     }
 
     public ProductList getDeliveredProductList(Order order){
-        return orderProductListMap.get(order);
+        return orderProductListMap.getOrDefault(order, EMPTY_PRODUCT_LIST);
     }
 
     private class InnerVisitor implements ActionVisitor {

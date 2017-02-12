@@ -50,7 +50,7 @@ public abstract class AlgoTest {
 
     private Solution getSolution(Game game) {
         Algo algo = getAlgo();
-        return algo.getSolution(game);
+        return algo.findSolution(game);
     }
 
     protected abstract Algo getAlgo();
@@ -59,7 +59,7 @@ public abstract class AlgoTest {
         try {
             solutionChecker.checkSolution(game, solution);
         } catch (SolutionValidationException e) {
-            fail();
+            fail(System.lineSeparator() + e.getMessage());
         }
     }
 

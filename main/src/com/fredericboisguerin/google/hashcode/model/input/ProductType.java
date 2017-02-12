@@ -10,4 +10,9 @@ public class ProductType {
     public Weight getWeight() {
         return weight;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(hashCode());
+    }
 }

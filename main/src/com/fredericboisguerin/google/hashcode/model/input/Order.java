@@ -26,4 +26,11 @@ public class Order {
     public int getQuantityFor(ProductType productType) {
         return orderedProductList.getQuantityFor(productType);
     }
+
+    @Override
+    public String toString() {
+        return System.lineSeparator() +
+                "Delivery position: " + deliveryPosition + System.lineSeparator() +
+                orderedProductList;
+    }
 }
