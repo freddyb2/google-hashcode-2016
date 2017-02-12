@@ -9,7 +9,7 @@ public class SolutionChecker {
 
     private static final String ORDER_INCOMPLETE_MESSAGE = "Order %s is not completely delivered. Missing %d product items of type %s";
 
-    public void checkSolution(Game game, Solution solution) throws SolutionValidationException {
+    public long getScore(Game game, Solution solution) throws SolutionValidationException {
         Position firstWarehousePosition = game.getWarehouses()
                                               .get(0)
                                               .getPosition();
@@ -26,6 +26,11 @@ public class SolutionChecker {
             }
         }
         assertThat(forEachOrderIn(game), deliveryIsComplete(deliveriesMonitor));
+        return computeScore(dronesMonitor.getMaxNbTurns(), game.getTurns());
+    }
+
+    private long computeScore(long effectiveTurns, long maxAuthorizedTurns) {
+        return ((maxAuthorizedTurns - effectiveTurns) * 100) / maxAuthorizedTurns;
     }
 
     private void assertThat(Iterable<Order> orderIterator, OrderChecker orderChecker) throws SolutionValidationException {

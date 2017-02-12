@@ -57,7 +57,8 @@ public abstract class AlgoTest {
 
     private void assertThatCheckPass(Game game, Solution solution) {
         try {
-            solutionChecker.checkSolution(game, solution);
+            long score = solutionChecker.getScore(game, solution);
+            System.out.println("FINAL SCORE = "+score);
         } catch (SolutionValidationException e) {
             fail(System.lineSeparator() + e.getMessage());
         }

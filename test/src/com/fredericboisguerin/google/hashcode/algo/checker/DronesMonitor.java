@@ -19,6 +19,14 @@ class DronesMonitor {
         this.maxTurns = maxTurns;
     }
 
+    public long getMaxNbTurns() {
+        return monitoredDroneMap.values()
+                                .stream()
+                                .map(DroneMonitor::getCount)
+                                .max(Long::compareTo)
+                                .orElse(0L);
+    }
+
     public void notifyBeforeAction(Action action) {
         action.accept(visitor);
     }

@@ -18,4 +18,8 @@ class TurnsCounter {
         }
         count += turns;
     }
+
+    public long getCount() {
+        return count;
+    }
 }

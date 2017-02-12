@@ -1,5 +1,7 @@
 package com.fredericboisguerin.google.hashcode.model.input;
 
+import com.fredericboisguerin.google.hashcode.IntegerUtils;
+
 public class Position {
 
     private final int row;
@@ -22,9 +24,7 @@ public class Position {
         int deltaRow = row - position.row;
         int deltaColumn = column - position.column;
         double norm2 = Math.sqrt(square(deltaRow) + square(deltaColumn));
-        double floor = Math.floor(norm2);
-        long round = Math.round(floor);
-        return (norm2 - floor) > 0 ? round + 1 : round;
+        return IntegerUtils.nextLong(norm2);
     }
 
     @Override

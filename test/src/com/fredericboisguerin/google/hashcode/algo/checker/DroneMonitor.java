@@ -32,4 +32,8 @@ class DroneMonitor {
     private void inc(long turns) {
         turnsCounter.inc(turns);
     }
+
+    public long getCount() {
+        return turnsCounter.getCount();
+    }
 }
