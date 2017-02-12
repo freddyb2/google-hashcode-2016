@@ -35,6 +35,15 @@ public class Deliver implements Action {
     }
 
     @Override
+    public void execute() {
+        ProductType productType = getProductType();
+        int quantity = getQuantity();
+        for (int i = 0; i < quantity; i++) {
+            getDrone().unload(productType);
+        }
+    }
+
+    @Override
     public void accept(ActionVisitor visitor) {
         visitor.visit(this);
     }

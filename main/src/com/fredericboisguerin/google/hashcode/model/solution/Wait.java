@@ -20,6 +20,11 @@ public class Wait implements DroneAction {
     }
 
     @Override
+    public void execute() {
+        // Nothing to do
+    }
+
+    @Override
     public void accept(ActionVisitor visitor) {
         visitor.visit(this);
     }

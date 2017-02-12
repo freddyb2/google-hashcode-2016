@@ -10,7 +10,6 @@ public class SolutionChecker {
     private static final String ORDER_INCOMPLETE_MESSAGE = "Order %s is not completely delivered. Missing %d product items of type %s";
 
     public void checkSolution(Game game, Solution solution) throws SolutionValidationException {
-        InnerVisitor executor = new InnerVisitor();
         Position firstWarehousePosition = game.getWarehouses()
                                               .get(0)
                                               .getPosition();
@@ -20,7 +19,7 @@ public class SolutionChecker {
         for (Action action : solution) {
             try {
                 dronesMonitor.notifyBeforeAction(action);
-                action.accept(executor);
+                action.execute();
                 deliveriesMonitor.notifyAfterAction(action);
             } catch (Exception e) {
                 throw new SolutionValidationException(e);
@@ -52,45 +51,6 @@ public class SolutionChecker {
 
     private Iterable<Order> forEachOrderIn(Game game) {
         return () -> game.getOrders().iterator();
-    }
-
-    private class InnerVisitor implements ActionVisitor {
-
-        @Override
-        public void visit(Load load) {
-            Warehouse warehouse = load.getWarehouse();
-            ProductItemContainer warehouseContainer = warehouse.getProductItemContainer();
-            for (int i = 0; i < load.getQuantity(); i++) {
-                ProductItem productItem = warehouseContainer.unload(load.getProductType());
-                load.getDrone().load(productItem);
-            }
-        }
-
-        @Override
-        public void visit(Unload unload) {
-            Warehouse warehouse = unload.getWarehouse();
-            ProductItemContainer warehouseContainer = warehouse
-                    .getProductItemContainer();
-            ProductType productType = unload.getProductType();
-            for (int i = 0; i < unload.getQuantity(); i++) {
-                ProductItem productItem = unload.getDrone().unload(productType);
-                warehouseContainer.load(productItem);
-            }
-        }
-
-        @Override
-        public void visit(Deliver deliver) {
-            ProductType productType = deliver.getProductType();
-            int quantity = deliver.getQuantity();
-            for (int i = 0; i < quantity; i++) {
-                deliver.getDrone().unload(productType);
-            }
-        }
-
-        @Override
-        public void visit(Wait wait) {
-            // Do nothing
-        }
     }
 
     private interface OrderChecker {
