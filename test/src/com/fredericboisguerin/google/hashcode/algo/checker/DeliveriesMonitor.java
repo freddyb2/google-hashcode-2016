@@ -10,7 +10,7 @@ import java.util.Map;
 
 class DeliveriesMonitor {
 
-    public static final ProductList EMPTY_PRODUCT_LIST = new ProductList();
+    private static final ProductList EMPTY_PRODUCT_LIST = new ProductList();
     private final Map<Order, ProductList> orderProductListMap = new HashMap<>();
     private final InnerVisitor visitor = new InnerVisitor();
 
