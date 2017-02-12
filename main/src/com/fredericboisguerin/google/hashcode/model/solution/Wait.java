@@ -2,7 +2,7 @@ package com.fredericboisguerin.google.hashcode.model.solution;
 
 import com.fredericboisguerin.google.hashcode.model.input.Drone;
 
-public class Wait implements DroneAction {
+public class Wait implements Action {
     private final Drone drone;
     private final int nbTurns;
 

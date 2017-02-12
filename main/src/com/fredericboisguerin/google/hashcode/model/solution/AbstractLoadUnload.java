@@ -4,7 +4,7 @@ import com.fredericboisguerin.google.hashcode.model.input.Drone;
 import com.fredericboisguerin.google.hashcode.model.input.ProductType;
 import com.fredericboisguerin.google.hashcode.model.input.Warehouse;
 
-public abstract class AbstractLoadUnload implements DroneAction {
+public abstract class AbstractLoadUnload implements Action {
 
    private final Drone drone;
    private final Warehouse warehouse;
